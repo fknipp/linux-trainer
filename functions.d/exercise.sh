@@ -8,8 +8,6 @@ exercise::run() {
   basename="${exercise%.*}"
   export EXERCISE_NAME="${basename##*/}"
 
-  echo::warn ${basename}
-
   if [[ -x "${basename}.before" ]]; then
     "${basename}.before"
   fi
