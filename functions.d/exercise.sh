@@ -6,6 +6,8 @@ exercise::run() {
   exercise=$1
 
   basename="${exercise%.*}"
+  export EXERCISE_STATEFILE="${PWD}/.exercise_state"
+  exercise::reset_state
   export EXERCISE_NAME="${basename##*/}"
 
   if [[ -x "${basename}.before" ]]; then
@@ -13,7 +15,7 @@ exercise::run() {
   fi
 
   if [[ -x "${exercise}" ]]; then
-    "${exercise}"
+    "${exercise}" && exercise::set_success
   fi
 
   if [[ -f "${basename}.bashrc" ]]; then
@@ -23,4 +25,46 @@ exercise::run() {
   if [[ -x "${basename}.after" ]]; then
     "${basename}.after"
   fi
+
+  exercise::is_success
+}
+
+exercise::set_state() {
+  if [[ ! ${EXERCISE_STATEFILE} ]]; then
+    echo::error "State file for exercise not set."
+    return 1;
+  fi
+
+  if [[ ! -w ${EXERCISE_STATEFILE} ]]; then
+    echo::error "State file for exercise not found nor writeable."
+    return 1;
+  fi
+
+  echo "$@" > "${EXERCISE_STATEFILE}"
+}
+
+exercise::get_state() {
+  if [[ ! ${EXERCISE_STATEFILE} ]]; then
+    echo::error "State file for exercise not set."
+    return 1;
+  fi
+
+  if [[ ! -r ${EXERCISE_STATEFILE} ]]; then
+    echo::error "State file for exercise not found nor readable."
+    return 1;
+  fi
+
+  cat "${EXERCISE_STATEFILE}"
+}
+
+exercise::reset_state() {
+  exercise::set_state ""
+}
+
+exercise::set_success() {
+  exercise::set_state "SUCCESS"
+}
+
+exercise::is_success() {
+  [[ $(exercise::get_state) = "SUCCESS" ]]
 }
