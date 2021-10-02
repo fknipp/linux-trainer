@@ -4,6 +4,6 @@ cd "${0%/*}" || exit 1
 
 . ../functions.sh
 
-exercises=(config/*.bashrc)
+export EXERCISES=(config/*.bashrc)
 
-main "${exercises[@]}"
+main "$@"

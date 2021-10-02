@@ -1,5 +1,10 @@
 #!/bin/bash
 
+message::reset() {
+  echo::info "Die Lektion wird an der letzten Stelle fortgesetzt."
+  echo "durch Aufruf von $0 reset können Sie die Lektion neu starten."
+}
+
 message::start() {
   echo -e "Die Übung ${C_INFO}${EXERCISE_NAME}${C_NORMAL} wird gestartet."
 }
