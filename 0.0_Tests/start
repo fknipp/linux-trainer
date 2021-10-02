@@ -6,8 +6,4 @@ cd "${0%/*}" || exit 1
 
 exercises=(config/*.sh)
 
-for exercise in "${exercises[@]}"; do
-  while ! exercise::run "${exercise}"; do
-    message::retry
-  done
-done
+main "${exercises[@]}"

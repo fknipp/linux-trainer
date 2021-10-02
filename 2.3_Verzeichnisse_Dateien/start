@@ -6,10 +6,4 @@ cd "${0%/*}" || exit 1
 
 exercises=(config/*.bashrc)
 
-for exercise in "${exercises[@]}"; do
-  while ! exercise::run "${exercise}"; do
-    message::retry
-  done
-done
-
-message::finished
+main "${exercises[@]}"
