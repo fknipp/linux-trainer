@@ -4,12 +4,10 @@
 . ../functions.sh
 
 check() {
-  if [[ "$PWD" = "/etc" ]]; then
-    echo::success "Gratulation, Sie haben das Verzeichnis /etc gefunden."
-    echo::info "Wechseln Sie zurück in Ihr Heimatverzeichnis."
-  elif [[ "$PWD" = "$HOME" ]]; then
+  if [[ "$PWD" = "$HOME" ]]; then
+    exercise::set_success
     echo::success "Super, Sie sind jetzt in Ihrem Heimatverzeichnis."
   else
-    echo::info "Wechseln Sie in das Verzeichnis /etc"
+    echo::info "Wechseln Sie in Ihr Heimatverzeichnis."
   fi
 }
