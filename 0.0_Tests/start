@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd "${0%/*}" || exit 1
+
+. ../functions.sh
+
+exercises=(config/*.sh)
+
+for exercise in "${exercises[@]}"; do
+  exercise::run "${exercise}"
+done
