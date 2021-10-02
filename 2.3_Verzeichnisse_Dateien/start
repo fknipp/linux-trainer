@@ -1,5 +1,11 @@
 #!/bin/bash
 
-cd ${0%/*}
+cd "${0%/*}" || exit 1
 
-bash --rcfile config/uebung1.bashrc
+. ../functions.sh
+
+exercises=(config/*.bashrc)
+
+for exercise in "${exercises[@]}"; do
+  exercise::run "${exercise}"
+done
