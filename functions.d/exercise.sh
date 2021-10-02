@@ -10,6 +10,8 @@ exercise::run() {
   exercise::reset_state
   export EXERCISE_NAME="${basename##*/}"
 
+  message::start
+
   if [[ -x "${basename}.before" ]]; then
     "${basename}.before"
   fi
@@ -58,7 +60,7 @@ exercise::get_state() {
 }
 
 exercise::reset_state() {
-  exercise::set_state ""
+  true > "${EXERCISE_STATEFILE}"
 }
 
 exercise::set_success() {
