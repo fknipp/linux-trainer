@@ -9,7 +9,7 @@ exercise::run() {
   export EXERCISE_STATEFILE="${PWD}/.exercise_state"
   exercise::reset_state
   export EXERCISE_NAME="${basename##*/}"
-
+  
   message::start
 
   if [[ -x "${basename}.before" ]]; then
