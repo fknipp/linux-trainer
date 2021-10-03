@@ -24,7 +24,7 @@ check() {
       echo::success "Super, Sie sind im Verzeichnis baum/level1/level2 mit langem Namen."
     fi
     ;;
- ENTERED_LONG)
+  ENTERED_LONG)
     if [[ "${PWD##*/}" = "level1" ]]; then
       exercise::set_success
       echo::success "Super, Sie sind im Verzeichnis baum/level1/."
