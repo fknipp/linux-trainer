@@ -10,6 +10,8 @@ exercise::run() {
   exercise::reset_state
   export EXERCISE_NAME="${basename##*/}"
 
+  header::set "$(echo::line "" "${EXERCISE_NAME}" "${C_REVERSE}" "${C_NORMAL}")"
+
   message::start
 
   if [[ -x "${basename}.before" ]]; then
@@ -27,6 +29,8 @@ exercise::run() {
   if [[ -x "${basename}.after" ]]; then
     "${basename}.after"
   fi
+
+  header::set
 
   exercise::is_success
 }

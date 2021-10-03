@@ -1,6 +1,16 @@
 #!/bin/bash
 
 bash::check() {
+
+  local color
+  if exercise::is_success; then
+    color="${C_SUCCESS}"
+  else
+    color="${C_INFO}"
+  fi
+
+  header::set "$(echo::line "" "${EXERCISE_NAME}" "${color}${C_REVERSE}" "${C_NORMAL}")"
+
   local list_history
   list_history=$(history 1)
 
