@@ -30,7 +30,7 @@ exercise::run() {
     "${basename}.after"
   fi
 
-  header::set
+  header::release
 
   exercise::is_success
 }
