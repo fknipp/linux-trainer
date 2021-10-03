@@ -9,7 +9,7 @@ exercise::run() {
   export EXERCISE_STATEFILE="${PWD}/.exercise_state"
   exercise::reset_state
   export EXERCISE_NAME="${basename##*/}"
-  
+
   message::start
 
   if [[ -x "${basename}.before" ]]; then
@@ -34,33 +34,33 @@ exercise::run() {
 exercise::set_state() {
   if [[ ! ${EXERCISE_STATEFILE} ]]; then
     echo::error "State file for exercise not set."
-    return 1;
+    return 1
   fi
 
   if [[ ! -w ${EXERCISE_STATEFILE} ]]; then
     echo::error "State file for exercise not found nor writeable."
-    return 1;
+    return 1
   fi
 
-  echo "$@" > "${EXERCISE_STATEFILE}"
+  echo "$@" >"${EXERCISE_STATEFILE}"
 }
 
 exercise::get_state() {
   if [[ ! ${EXERCISE_STATEFILE} ]]; then
     echo::error "State file for exercise not set."
-    return 1;
+    return 1
   fi
 
   if [[ ! -r ${EXERCISE_STATEFILE} ]]; then
     echo::error "State file for exercise not found nor readable."
-    return 1;
+    return 1
   fi
 
   cat "${EXERCISE_STATEFILE}"
 }
 
 exercise::reset_state() {
-  true > "${EXERCISE_STATEFILE}"
+  true >"${EXERCISE_STATEFILE}"
 }
 
 exercise::set_success() {
