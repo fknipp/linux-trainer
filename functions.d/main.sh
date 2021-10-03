@@ -21,6 +21,11 @@ main() {
 
     while ! exercise::run "${exercise}"; do
       message::retry
+      message::abort
+      read
+      if [[ "x$REPLY" = "xquit" ]]; then
+        exit
+      fi
     done
     echo "${exercise}" >> "${successful_exercises_file}"
   done
