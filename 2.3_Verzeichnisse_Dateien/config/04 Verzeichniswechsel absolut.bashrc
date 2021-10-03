@@ -3,7 +3,7 @@
 # shellcheck source=../../functions.sh
 . ../functions.sh
 
-cd
+cd || exit
 
 check() {
 

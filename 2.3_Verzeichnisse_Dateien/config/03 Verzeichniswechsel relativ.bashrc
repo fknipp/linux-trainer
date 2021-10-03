@@ -19,15 +19,15 @@ check() {
     fi
     ;;
   ENTERED_2.3)
-    if [[ "${PWD##*/}" = "level2 mit langem Namen" ]]; then
+    if [[ "${PWD##*/}" = "level2 with long name" ]]; then
       exercise::set_state ENTERED_LONG
-      echo::success "Super, Sie sind im Verzeichnis baum/level1/level2 mit langem Namen."
+      echo::success "Super, Sie sind im Verzeichnis trainig_tree/level1/level2 with long name."
     fi
     ;;
   ENTERED_LONG)
     if [[ "${PWD##*/}" = "level1" ]]; then
       exercise::set_success
-      echo::success "Super, Sie sind im Verzeichnis baum/level1/."
+      echo::success "Super, Sie sind im Verzeichnis trainig_tree/level1."
     fi
     ;;
   esac
@@ -37,10 +37,14 @@ check() {
   # Additional output according the current state
   case $state in
   "")
-    echo::info "Wechseln Sie in das Übungsverzeichnis 2.3_Verzeichnisse_Dateien.\nHinweis: Nutzen Sie ls und tree zur Orientierung."
+    echo::info "Wechseln Sie in das Übungsverzeichnis 2.3_Verzeichnisse_Dateien."
+    echo::info "Hinweis: Nutzen Sie TAB-Completion. Geben Sie die ersten Zeichen des Pfades ein und drücken Sie die Tabulator Taste."
+    echo::info "Hinweis: Mit einem Doppldruck der Tabulatro Taste bekommen Sie die verfügbaren Möglichkeiten angezeigt."
     ;;
   ENTERED_2.3)
-    echo::info "Wechseln Sie in das Verzeichnis baum/level1/level2 mit langem Namen.\nHinweis: Benutzen Sie die Tastenkürzel der Bash."
+    echo::info "Wechseln Sie in das Verzeichnis trainig_tree/level1/level2 with long name."
+    echo::info "Hinweis: Nutzen Sie TAB-Completion. Geben Sie die ersten Zeichen des Pfades ein und drücken Sie die Tabulator Taste."
+    echo::info "Hinweis: Mit einem Doppldruck der Tabulatro Taste bekommen Sie die verfügbaren Möglichkeiten angezeigt."
     ;;
   ENTERED_LONG)
     echo::info "Wechseln Sie in das übergeordnete Verzeichnis."
