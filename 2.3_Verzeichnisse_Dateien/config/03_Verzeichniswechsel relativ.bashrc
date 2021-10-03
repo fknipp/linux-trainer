@@ -3,6 +3,8 @@
 # shellcheck source=../../functions.sh
 . ../functions.sh
 
+cd ..
+
 check() {
 
   local state
@@ -18,8 +20,14 @@ check() {
     ;;
   ENTERED_2.3)
     if [[ "${PWD##*/}" = "level2 mit langem Namen" ]]; then
-      exercise::set_success
+      exercise::set_state ENTERED_LONG
       echo::success "Super, Sie sind im Verzeichnis baum/level1/level2 mit langem Namen."
+    fi
+    ;;
+ ENTERED_LONG)
+    if [[ "${PWD##*/}" = "level1" ]]; then
+      exercise::set_success
+      echo::success "Super, Sie sind im Verzeichnis baum/level1/."
     fi
     ;;
   esac
@@ -33,6 +41,9 @@ check() {
     ;;
   ENTERED_2.3)
     echo::info "Wechseln Sie in das Verzeichnis baum/level1/level2 mit langem Namen.\nHinweis: Benutzen Sie die Tastenkürzel der Bash."
+    ;;
+  ENTERED_LONG)
+    echo::info "Wechseln Sie in das übergeordnete Verzeichnis."
     ;;
   SUCCESS)
     message::success
