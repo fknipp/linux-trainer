@@ -11,6 +11,7 @@ message::start() {
 
 message::retry() {
   echo::warn "Die Übung war nicht erfolgreich und wird daher wiederholt."
+  echo "Zum Abbrechen der Übung quit eingeben. Fortsetzten mit Enter."
 }
 
 message::success() {
@@ -21,8 +22,4 @@ message::success() {
 message::finished() {
   echo::success "Herzlichen Glückwunsch, Sie haben alle Übungen erfolgreich absolviert."
   echo "Der Übungsmodus ist beendet. Noch viel Spaß mit Linux!"
-}
-
-message::abort() {
-  echo "Zum Abbrechen der Übung quit eingeben. Fortsetzten mit Enter."
 }
