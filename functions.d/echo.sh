@@ -8,20 +8,21 @@ export C_BOLD="\033[1m"
 export C_NORMAL="\033[0m"
 
 echo::error() {
-  echo -e "${C_ERROR}$@${C_NORMAL}"
+  echo -e "${C_ERROR}$*${C_NORMAL}"
 }
 
 echo::info() {
-  echo -e "${C_INFO}$@${C_NORMAL}"
+  echo -e "${C_INFO}$*${C_NORMAL}"
 }
 
 echo::warn() {
-  echo -e "${C_WARN}$@${C_NORMAL}"
+  echo -e "${C_WARN}$*${C_NORMAL}"
 }
 
 echo::success() {
-  echo -e "${C_SUCCESS}$@${C_NORMAL}"
+  echo -e "${C_SUCCESS}$*${C_NORMAL}"
 }
+
 
 # echo::error "This is an error."
 # echo::info "This should render as info."
