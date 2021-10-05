@@ -31,6 +31,8 @@ check() {
     ;;
   SUCCESS)
     echo::info "Zum Fortsetzten Strg-D oder exit eingeben."
+    ## Need some interactive elements here. NOTE: The check function is part of a prompt --> calling read in the prompt shuffles the output and workflow.
+    ## Use *.after file instead. To call the next file student need to leave current shell.
     ;;
   esac
 }
