@@ -22,7 +22,7 @@ main() {
     while ! exercise::run "${exercise}"; do
       message::retry
       read -r
-      if [[ "x$REPLY" = "xquit" ]]; then
+      if [[ "$REPLY" = "quit" ]]; then
         exit
       fi
     done
