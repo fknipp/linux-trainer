@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# shellcheck source=../../functions.sh
+. ../functions.sh
+
+cd || exit
+
+while [[ $REPLY -ne 2 ]]; do
+  echo::info "Wie viele Dateien wurden durch den Befehl 'touch meine,Beispiel datei' angelegt (Ziffer <Enter>)?"
+  read -r
+done
+
+echo::success "Sehr gut, Sie haben die korrekte Zahl erkannt. Leerzeichen trennen Worte in der Befehlszeile."
+exercise::set_success
