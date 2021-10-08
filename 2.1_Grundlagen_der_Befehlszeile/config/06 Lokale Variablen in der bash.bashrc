@@ -13,7 +13,7 @@ check() {
   # State changes
   case $state in
   "")
-    if [[ ! -z $geburtstag ]]; then
+    if [[ -n $geburtstag ]]; then
       exercise::set_success
       echo::success "Alles Gute! Für Ihren Jubeltag am $geburtstag."
     fi

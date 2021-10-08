@@ -29,7 +29,8 @@ check() {
   "")
     echo::info "Beim Wechsel der Übung von 07 auf Übung 08 ist Ihre Änderung verloren gegangen. Man sagt: Die Varaible war lokal."
     echo::info "Damit eine Variable über eine Session hinaus erhalten bleibt, muss sie mit dem Schlüsselwort export global gemacht werden."
-    echo::info "Benutzen Sie die Befehlshostorie der bash, holen Ihre Pfad-Variable an den Prompt und stellen Sie das Wort export voran."
+    echo::info "Benutzen Sie die Befehlshistorie der bash, holen Ihre Pfad-Variable an den Prompt und stellen Sie das Wort export voran."
+    echo::info "Die Befehlshistorie ist mit den Cursor-Tasten auf und ab erreichbar."
     ;;
   SUCCESS)
     message::success

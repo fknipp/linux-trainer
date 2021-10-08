@@ -15,7 +15,7 @@ check() {
   "")
     if [[ ${1} = "ls -l" ]]; then
       exercise::set_success
-      echo::success "Sie haben das Heimatverteichnis erfolgreich angezeigt mit Hilfe von ls -l."
+      echo::success "Sie haben das Heimatverzeichnis erfolgreich angezeigt mit Hilfe von ls -l."
     fi
     ;;
   esac
