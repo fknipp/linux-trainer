@@ -3,5 +3,6 @@
 echo "This is $0"
 echo "It is part of ${EXERCISE_NAME}"
 
-# Return unsuccessful state for testing
-exit 1
+read -r -p "Enter the exit code (0 for success): " exit_code
+
+exit $((exit_code))
