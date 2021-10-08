@@ -27,7 +27,8 @@ check() {
   case $state in
   "")
     echo::info "Wechseln Sie in das Übungsverzeichnis 2.3_Verzeichnisse_Dateien."
-    echo::info "Verwenden Sie dafür den absoluten Pfad. Dieser beginnt mit /."
+    echo "Verwenden Sie dafür den absoluten Pfad. Dieser beginnt mit /."
+    echo "Hinweis: Sie können den aktuellen Pfad mittels pwd anzeigen."
     ;;
   SUCCESS)
     message::success

@@ -38,13 +38,14 @@ check() {
   case $state in
   "")
     echo::info "Wechseln Sie in das Übungsverzeichnis 2.3_Verzeichnisse_Dateien."
-    echo::info "Hinweis: Nutzen Sie TAB-Completion. Geben Sie die ersten Zeichen des Pfades ein und drücken Sie die Tabulator Taste."
-    echo::info "Hinweis: Mit einem Doppldruck der Tabulatro Taste bekommen Sie die verfügbaren Möglichkeiten angezeigt."
+    echo "Hinweis: Nutzen Sie TAB-Completion. Geben Sie die ersten Zeichen des Pfades ein und drücken Sie die Tabulator-Taste."
+    echo "Hinweis: Mit einem Doppldruck der Tabulator-Taste bekommen Sie die verfügbaren Möglichkeiten angezeigt."
     ;;
   ENTERED_2.3)
     echo::info "Wechseln Sie in das Verzeichnis trainig_tree/level1/level2 with long name."
-    echo::info "Hinweis: Nutzen Sie TAB-Completion. Geben Sie die ersten Zeichen des Pfades ein und drücken Sie die Tabulator Taste."
-    echo::info "Hinweis: Mit einem Doppldruck der Tabulatro Taste bekommen Sie die verfügbaren Möglichkeiten angezeigt."
+    echo "Hinweis: Nutzen Sie TAB-Completion. Geben Sie die ersten Zeichen des Pfades ein und drücken Sie die Tabulator-Taste."
+    echo "Hinweis: Mit einem Doppldruck der Tabulator-Taste bekommen Sie die verfügbaren Möglichkeiten angezeigt."
+    echo "Beobachten Sie, was mit den Leerzeichen im Namen geschieht."
     ;;
   ENTERED_LONG)
     echo::info "Wechseln Sie in das übergeordnete Verzeichnis."
