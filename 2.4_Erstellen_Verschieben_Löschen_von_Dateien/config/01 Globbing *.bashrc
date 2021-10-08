@@ -27,7 +27,6 @@ check() {
   case $state in
   "")
     echo::info "Unter Globbing versteht man die gemeinsame Anzeige von Dateien oder Verzeichnissen mit ähnlichem Namen."
-    echo::info "Globbing ist möglich mit ? (passt auf genau 1 Zeichen im Namen)."
     echo::info "Globbing ist möglich mit * (passt auf beliebige Zeichen im Namen)."
     echo::info "Verwenden Sie * beim Aufruf von ls um alle Dateien zu listen, die das Wort 'Beispiel' enthalten."
     echo::info "Hinweis: Wildcards können auch mehrfach bei einem Aufruf verwendet werden."

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd "${0%/*}" || exit 1
+
+. ../functions.sh
+
+export EXERCISES=(config/*.bashrc)
+
+main "$@"
