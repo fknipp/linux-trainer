@@ -3,7 +3,7 @@
 # shellcheck source=../../functions.sh
 . ../functions.sh
 
-cd || exit
+cd .. || exit
 
 check() {
 
@@ -13,10 +13,10 @@ check() {
   # State changes
   case $state in
   "")
-    pattern=.*\*Beispiel\*.*
-    if [[ "$1" =~ $pattern ]]; then
-      exercise::set_success
-      echo::success "Sehr gut - Alle Beispiel Dateien gefunden."
+    if [[ "${1##.*/}" = "log" ]]; then
+      exercise::set_state ENTERED_LOG
+      echo::success "Sie sehen Dateien mit Ziffern im Dateinamen. Z.B. Dateien mit die dem Schema auth* entsprechen."
+      echo::info "Zeigen Sie alle auth log Dateien an, welche mit einer Ziffer enden."
     fi
     ;;
   esac
@@ -27,10 +27,9 @@ check() {
   case $state in
   "")
     echo::info "Unter Globbing versteht man die gemeinsame Anzeige von Dateien oder Verzeichnissen mit ähnlichem Namen."
-    echo::info "Globbing ist möglich mit ? (passt auf 0 oder 1 Zeichen im Namen)."
-    echo::info "Globbing ist möglich mit * (passt auf beliebige Zeichen im Namen)."
-    echo::info "Verwenden Sie * beim Aufruf von ls um alle Dateien zu listen, die das Wort 'Beispiel' enthalten."
-    echo::info "Hinweis: Wildcards können auch mehrfach bei einem Aufruf verwendet werden."
+    echo::info "Neben * ist Globbing auch mit ? möglich."
+    echo::info "Der Platzhalter ? passt auf genau 1 Zeichen im Namen."
+    echo::info "Zeigen Sie mit Hife des ? und * Wildcards alle Verzeichnisse des Kapitel 2 an."
     ;;
   SUCCESS)
     message::success
