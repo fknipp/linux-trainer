@@ -11,7 +11,7 @@ message::start() {
 
 message::retry() {
   echo::warn "Die Übung war nicht erfolgreich und wird daher wiederholt."
-  echo "Zum Abbrechen der Übung quit eingeben. Fortsetzten mit Enter."
+  echo "Zum Abbrechen der Übung quit eingeben. Fortsetzen mit Enter."
 }
 
 message::success() {
