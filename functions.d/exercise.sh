@@ -18,12 +18,13 @@ exercise::run() {
     "${basename}.before"
   fi
 
-  if [[ -x "${exercise}" ]]; then
+  if [[ "${exercise}" =~ \.bashrc$ ]]; then
+    bash --rcfile "${exercise}"
+  elif [[ -x "${exercise}" ]]; then
     "${exercise}" && exercise::set_success
-  fi
-
-  if [[ -f "${basename}.bashrc" ]]; then
-    bash --rcfile "${basename}.bashrc"
+  else
+    echo::error "${exercise} cannot be started. Execute flag is missing."
+    exit 1
   fi
 
   if [[ -x "${basename}.after" ]]; then
