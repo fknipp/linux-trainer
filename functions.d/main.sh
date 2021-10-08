@@ -11,8 +11,6 @@ main() {
     unset GLOBIGNORE
   fi
 
-  echo "${exercises[@]}"
-
   local successful_exercises_file
   successful_exercises_file="${PWD}/.successful_exercises"
 
