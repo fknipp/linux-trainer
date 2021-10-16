@@ -16,7 +16,7 @@ check() {
     pattern=.*$HOME/bin.*
     if [[ $1 =~ .*export.* && ${PATH} =~ $pattern ]]; then
       exercise::set_success
-      echo::success "Sehr gut! Ihre Pfadvariable enthält nun $HOME/bin und ist global für diese und all Sub-Shells gültig."
+      echo::success "Sehr gut! Ihre Pfadvariable enthält nun $HOME/bin und ist global für diese und alle Sub-Shells gültig."
       echo::info "In der Datei $HOME/.profile finden Sie weitere Einstellungen zur Pfadvariablen. Sie können mit less $HOME/.profile nachlesen."
     fi
     ;;
