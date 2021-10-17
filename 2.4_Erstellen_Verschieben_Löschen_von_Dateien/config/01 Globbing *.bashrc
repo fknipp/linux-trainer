@@ -16,7 +16,7 @@ check() {
     pattern=.*\*Beispiel\*.*
     if [[ "$1" =~ $pattern ]]; then
       exercise::set_success
-      echo::success "Sehr gut - Alle Beispiel Dateien gefunden."
+      echo::success "Sehr gut - Globbing mit * kann auch mehrfach (z.B. *Beispiel*) angewendet werden."
     fi
     ;;
   esac
