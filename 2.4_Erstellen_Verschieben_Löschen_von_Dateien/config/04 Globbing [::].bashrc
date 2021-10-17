@@ -34,7 +34,7 @@ check() {
     echo::info "Im Verzeichnis Geräteverzeichnis /dev befinden sich Dateien tty*."
     echo::info "Diese sind fortlaufende numeriert."
     echo::info "Zeigen Sie alle tty Dateien mit nur 1 Zahlenstelle im Namen an."
-    echo::info "Hinweis: Benutzen Sie Ziffernklasse."
+    echo::info "Welche Klasse scheint Ihnen hilfreich?"
     ;;
   SUCCESS)
     message::success
