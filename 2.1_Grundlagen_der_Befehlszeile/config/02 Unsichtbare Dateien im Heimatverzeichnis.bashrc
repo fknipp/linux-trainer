@@ -29,7 +29,7 @@ check() {
   "")
     echo::info "Sie befinden sich in Ihrem Heimatverzeichnis. Erkennbar an der Tilde '~' im Prompt."
     echo::info "Zeigen sie alle Dateien in dem Verzeichnis an."
-    echo::info "Hinweis: Der Befehl ls benötigt dafür eine Option."
+    echo::info "Hinweis: Der Befehl ls benötigt dafür eine Option. Bitte nur eine Option angeben."
     ;;
   SUCCESS)
     message::success

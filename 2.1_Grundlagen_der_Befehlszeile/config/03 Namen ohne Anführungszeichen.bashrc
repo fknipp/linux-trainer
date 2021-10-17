@@ -26,7 +26,8 @@ check() {
   case $state in
   "")
     echo::info "Mit dem Befehl touch können Dateien angelegt werden."
-    echo::info "touch akzeptiert mehrere Worte als Argumente. Achten Sie auf die genaue Schreibweise von Befehlen und Parametern."
+    echo::info "touch akzeptiert mehrere Worte als Argumente."
+    echo::info "Hinweis: Achten Sie auf die genaue Schreibweise von Befehlen und Parametern."
     echo::info "Führen Sie den Befehl 'touch meine,Beispiel datei' aus."
     ;;
   SUCCESS)
