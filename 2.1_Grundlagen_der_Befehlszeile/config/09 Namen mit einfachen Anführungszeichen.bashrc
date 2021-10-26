@@ -32,7 +32,7 @@ check() {
   case $state in
   "")
     echo::info "Einfache Anfürhrungszeichen (single quotes) schützen alle Sonderzeichen."
-    echo::info "Führen Sie den Befehl 'touch '\$USER,Beispiel datei' aus."
+    echo::info "Führen Sie den Befehl ' touch '\$USER,Beispiel datei' ' aus."
     ;;
   ENTERED_TOUCHSQ)
     echo::success "Zeigen Sie den Inhalt des Verzeichnisses an. Vergleichen Sie die Dateinamen."
